@@ -1,24 +1,15 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
 
-/ {
-    keymap {
+/{
+    keymap{
         compatible = "zmk,keymap";
 
-        default_layer {
+        default_layer{
             bindings = <
                 &kp KP_NUMBER_1     &kp KP_NUMBER_2     &kp KP_NUMBER_3
                 &kp KP_NUMBER_4     &kp KP_NUMBER_5     &kp KP_NUMBER_6
-                &kp KP_NUMBER_7     &kp KP_NUMBER_8     &mo 1
-            >;
-        };
-
-        second_layer {
-            bindings = <
-                &kp A               &kp B               &kp C
-                &none               &none               &none
-                &none               &none               &none
+                &kp KP_NUMBER_7     &kp KP_NUMBER_8     &kp KP_NUMBER_9
             >;
         };
     };
