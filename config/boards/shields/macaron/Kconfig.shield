@@ -1,2 +1,2 @@
 config SHIELD_MACARON
-    def_bool $(shield_list_contains, macaron)
+    def_bool $(shields_list_contains, macaron)
