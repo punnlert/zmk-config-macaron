@@ -1,0 +1,6 @@
+if SHIELD_MACARON
+
+config ZMK_KEYBOARD_NAME
+    default "macaron"
+
+endif
