@@ -7,7 +7,7 @@
 #define TEXT 2
 
 
-/ {
+/{
     macros {
         select_tool: select_tool {
             compatible = "zmk,behavior-macro";
@@ -43,6 +43,20 @@
             bindings
                 = <&kp ESCAPE &kp T>;
         };
+
+        bring_to_front: bring_to_front {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp ESCAPE &kp RIGHT_BRACKET>; 
+        };
+
+        send_to_back: send_to_back {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp ESCAPE &kp LEFT_BRACKET>; 
+        };  
     };
 
     behaviors {
@@ -67,7 +81,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
-            bindings = <&kp>, <&kp>; 
+            bindings = <&send_to_back>, <&bring_to_front>; 
         };
     };
 
@@ -86,12 +100,22 @@
 
         composition_layer {
             bindings = <
-                &mt LA(H) LA(V)             &kp LA(W)                                       &mt LC(LA(H)) LC(LA(V))
-                &kp LA(A)                   &kp LA(S)                                       &kp LA(D)
-                &tog TOOLBOX                &arrange_behavior LEFT_BRACKET RIGHT_BRACKET    &none
+                &mt LA(H) LA(V)             &kp LA(W)               &mt LC(LA(H)) LC(LA(V))
+                &kp LA(A)                   &kp LA(S)               &kp LA(D)
+                &tog TOOLBOX                &arrange_behavior 0 0   &tog TEXT
             >;
 
             sensor-bindings = <&inc_dec_kp LG(RIGHT_BRACKET) LG(LEFT_BRACKET)>;
+        };
+
+        text_layer {
+            bindings = <
+                &kp LA(LG(L))               &kp LA(LG(T))               &kp LA(LG(R))
+                &kp LG(I)                   &kp LA(LG(LT))              &kp LA(LG(GT))
+                &tog TOOLBOX                &kp LS(LC(V))               &tog TOOLBOX
+            >;
+
+            sensor-bindings = <&inc_dec_kp LS(LG(GT)) LS(LG(LT))>;
         };
     };
 };
