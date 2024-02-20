@@ -92,7 +92,7 @@
             bindings = <
                 &select_behavior 0 0        &frame_behavior 0 0     &text_tool
                 &mt LG(X) LG(C)             &kp LG(V)               &kp LG(D)
-                &none                       &mt LG(LS(G)) LG(G)     &tog COMP
+                &none                       &mt LG(LS(G)) LG(G)     &to COMP
             >;
 
             sensor-bindings = <&inc_dec_kp LG(LS(Z)) LG(Z)>;
@@ -102,7 +102,7 @@
             bindings = <
                 &mt LA(H) LA(V)             &kp LA(W)               &mt LC(LA(H)) LC(LA(V))
                 &kp LA(A)                   &kp LA(S)               &kp LA(D)
-                &tog TOOLBOX                &arrange_behavior 0 0   &tog TEXT
+                &to TOOLBOX                 &arrange_behavior 0 0   &to TEXT
             >;
 
             sensor-bindings = <&inc_dec_kp LG(RIGHT_BRACKET) LG(LEFT_BRACKET)>;
@@ -112,7 +112,7 @@
             bindings = <
                 &kp LA(LG(L))               &kp LA(LG(T))               &kp LA(LG(R))
                 &kp LG(I)                   &kp LA(LG(LT))              &kp LA(LG(GT))
-                &tog TOOLBOX                &kp LS(LC(V))               &tog TOOLBOX
+                &to TOOLBOX                 &kp LS(LC(V))               &to TOOLBOX
             >;
 
             sensor-bindings = <&inc_dec_kp LS(LG(GT)) LS(LG(LT))>;
