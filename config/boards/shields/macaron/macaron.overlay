@@ -4,7 +4,7 @@
     chosen{
         zmk,kscan = &default_kscan;
         zmk,matrix_transform = &default_transform;
-        zmk,sensors = &default_sensors
+        zmk,sensors = &default_sensors;
     };
 
     default_kscan: kscan{
