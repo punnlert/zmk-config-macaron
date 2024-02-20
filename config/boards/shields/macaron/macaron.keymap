@@ -86,7 +86,7 @@
 
         composition_layer {
             bindings = <
-                &mt LA(H) LA(V)             &kp LA(W)                                       &mt LCTRL(LA(H)) LCTRL(LA(V))
+                &mt LA(H) LA(V)             &kp LA(W)                                       &mt LC(LA(H)) LC(LA(V))
                 &kp LA(A)                   &kp LA(S)                                       &kp LA(D)
                 &tog TOOLBOX                &arrange_behavior LEFT_BRACKET RIGHT_BRACKET    &none
             >;
