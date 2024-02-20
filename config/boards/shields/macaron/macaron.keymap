@@ -19,33 +19,28 @@
                 = <&kp ESCAPE &kp F>;
         };
 
+        frame_selection: frame_selection {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp LA(LG(G))>;
+        };
+        
         text_tool: text_tool {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
                 = <&kp ESCAPE &kp T>;
-        };
-
-        undo: undo {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&kp LG(Z)>;
-        };
-
-        redo: redo {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&kp LG(LS(Z))>;
-        };
+        }; 
     };
 
     behaviors {
-        mistake: mistake {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&undo>, <&redo>;
+        frame_behavior: frame_behavior {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <400>;
+            bindings = <&frame_tool>, <&frame_selection>;
         };
     };
 
@@ -54,12 +49,12 @@
 
         default_layer {
             bindings = <
-                &select_tool     &frame_tool     &text_tool
+                &select_tool     &frame_behavior     &text_tool
                 &kp KP_NUMBER_4     &kp KP_NUMBER_5     &kp KP_NUMBER_6
                 &kp KP_NUMBER_7     &kp KP_NUMBER_8     &kp KP_NUMBER_9
             >;
 
-            sensor-bindings = <&mistake>;
+            sensor-bindings = <&inc_dec_kp LG(LS(Z)) LG(Z)>;
         };
     };
 };
