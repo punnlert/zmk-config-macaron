@@ -88,20 +88,10 @@
             bindings = <
                 &mt LA(H) LA(V)             &kp LA(W)                                       &mt LCTRL(LA(H)) LCTRL(LA(V))
                 &kp LA(A)                   &kp LA(S)                                       &kp LA(D)
-                &tog TOOLBOX                &arrange_behavior LEFT_BRACKET RIGHT_BRACKET    &tog TEXT
+                &tog TOOLBOX                &arrange_behavior LEFT_BRACKET RIGHT_BRACKET    &none
             >;
 
             sensor-bindings = <&inc_dec_kp LG(RIGHT_BRACKET) LG(LEFT_BRACKET)>;
-        };
-
-        text_layer {
-            bindings = <
-                &kp LA(LG(L))               &kp LA(LG(T))               &kp LA(LG(R))
-                &kp LG(I)                   &kp LA(LG(LT))              &kp LA(LG(GT))
-                &tog TOOLBOX                &kp LS(LC(V))               &tog TOOLBOX
-            >;
-
-            sensor-bindings = <&inc_dec_kp LS(LG(GT)) LS(LG(LT))>;
         };
     };
 };
