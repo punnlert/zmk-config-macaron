@@ -111,7 +111,7 @@
         text_layer {
             bindings = <
                 &kp LA(LG(L))               &kp LA(LG(T))               &kp LA(LG(R))
-                &kp LG(I)                   &kp LA(LG(LT))              &kp LA(LG(GT))
+                &kp LG(I)                   &kp LA(LG(LESS_THAN))       &kp LA(LG(GREATER_THAN))
                 &to TOOLBOX                 &kp LS(LC(V))               &to TOOLBOX
             >;
 
