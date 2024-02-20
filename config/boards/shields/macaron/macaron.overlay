@@ -4,7 +4,6 @@
     chosen{
         zmk,kscan = &default_kscan;
         zmk,matrix_transform = &default_transform;
-        zmk,sensors = &default_sensors;
     };
 
     default_kscan: kscan{
@@ -25,11 +24,11 @@
         compatible = "alps,ec11";
         a-gpios = <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <20>;
+        steps = <80>;
         status = "okay";
     };
 
-    default_sensors: sensors {
+    sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&this_encoder>;
         triggers-per-rotation = <20>;
