@@ -4,12 +4,21 @@
 
 
 /{
-    keymap{
+    macros {
+        select_tool: select_tool {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp ESCAPE &kp V>;
+        };
+    };
+
+    keymap {
         compatible = "zmk,keymap";
 
-        default_layer{
+        default_layer {
             bindings = <
-                &kp KP_NUMBER_1     &kp KP_NUMBER_2     &kp KP_NUMBER_3
+                &select_tool     &kp F     &kp T
                 &kp KP_NUMBER_4     &kp KP_NUMBER_5     &kp KP_NUMBER_6
                 &kp KP_NUMBER_7     &kp KP_NUMBER_8     &kp KP_NUMBER_9
             >;
