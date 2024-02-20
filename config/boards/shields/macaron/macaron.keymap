@@ -7,7 +7,7 @@
 #define TEXT 2
 
 
-/{
+/ {
     macros {
         select_tool: select_tool {
             compatible = "zmk,behavior-macro";
@@ -43,20 +43,6 @@
             bindings
                 = <&kp ESCAPE &kp T>;
         };
-
-        bring_to_front: bring_to_front {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&kp ESCAPE &kp RIGHT_BRACKET>; 
-        };
-
-        send_to_back: send_to_back {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&kp ESCAPE &kp LEFT_BRACKET>; 
-        };  
     };
 
     behaviors {
@@ -81,7 +67,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <400>;
-            bindings = <&send_to_back>, <&bring_to_front>; 
+            bindings = <&kp>, <&kp>; 
         };
     };
 
@@ -100,9 +86,9 @@
 
         composition_layer {
             bindings = <
-                &mt LA(H) LA(V)             &kp LA(W)               &mt LCTRL(LA(H)) LCTRL(LA(V))
-                &kp LA(A)                   &kp LA(S)               &kp LA(D)
-                &tog TOOLBOX                &arrange_behavior 0 0   &tog TEXT
+                &mt LA(H) LA(V)             &kp LA(W)                                       &mt LCTRL(LA(H)) LCTRL(LA(V))
+                &kp LA(A)                   &kp LA(S)                                       &kp LA(D)
+                &tog TOOLBOX                &arrange_behavior LEFT_BRACKET RIGHT_BRACKET    &tog TEXT
             >;
 
             sensor-bindings = <&inc_dec_kp LG(RIGHT_BRACKET) LG(LEFT_BRACKET)>;
